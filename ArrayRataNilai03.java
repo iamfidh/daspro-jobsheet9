@@ -2,10 +2,15 @@ import java.util.Scanner;
 
 public class ArrayRataNilai03 {
     public static void main(String[] args) {
-        int[] nilaiMhs = new int[10];
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlahMhs = input.nextInt();
+
+        int[] nilaiMhs = new int[jumlahMhs];
         int total = 0;
         double  rata2;
-        Scanner input = new Scanner(System.in);
+
 
         for (int i = 0; i < nilaiMhs.length; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-" + (i + 1) + ": ");
@@ -34,6 +39,14 @@ public class ArrayRataNilai03 {
             predikat = "PERLU PENDAMPING";
         }
         System.out.println("Predikat kelas: " + predikat);
+
+        int jumlahLulus = 0;
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            if (nilaiMhs[i] > 70) {
+                jumlahLulus++;
+            }
+        }
+        System.out.println("Jumlah mahasiswa dengan nilai di atas 70: " + jumlahLulus);
 
         input.close();
     }
